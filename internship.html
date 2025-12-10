@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>SaveNow – Cashback Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="internship.css" />
+</head>
+<body>
+
+  <div class="page">
+
+    <!-- HEADER -->
+    <header>
+      <div class="brand">
+        <div class="brand-logo">S</div>
+        <div class="brand-text">
+          <h1>SaveNow</h1>
+          <p>Your personal cashback & membership tracker</p>
+        </div>
+      </div>
+
+      <!-- Member ID Input -->
+      <div class="member-id-box">
+        <label>Member ID:</label>
+        <input type="text" id="memberIdInput" placeholder="Enter Member ID">
+        <button id="loadMemberBtn">Load</button>
+      </div>
+
+    </header>
+
+    <main>
+
+      <!-- LEFT PANEL – USER SNAPSHOT -->
+      <section class="card">
+        <div class="card-header">
+          <div>
+            <div class="card-title">User Snapshot</div>
+            <div class="card-subtitle">Active Member Data</div>
+          </div>
+          <div class="pill">ID: <span id="memberId">Not Loaded</span></div>
+        </div>
+
+        <div class="metrics-grid">
+          <div class="metric-card">
+            <div class="metric-label">Total Savings</div>
+            <div class="metric-value accent" id="metricTotalSavings">₹0</div>
+          </div>
+
+          <div class="metric-card">
+            <div class="metric-label">Coupons Purchased</div>
+            <div class="metric-value" id="metricCoupons">0</div>
+          </div>
+
+          <div class="metric-card">
+            <div class="metric-label">Membership</div>
+            <div class="metric-value" id="metricMembershipType">—</div>
+          </div>
+
+          <div class="metric-card">
+            <div class="metric-label">Time Remaining</div>
+            <div class="metric-value" id="metricTimeRemaining">—</div>
+          </div>
+        </div>
+
+        <div class="membership-row">
+          <div class="membership-line">
+            <span class="membership-type-label">Plan</span>
+            <span class="membership-type-value" id="membershipPlanLabel">—</span>
+          </div>
+
+          <div class="membership-line">
+            <span class="membership-type-label">Status</span>
+            <span id="membershipStatusBadge" class="badge-active">Inactive</span>
+          </div>
+
+          <div class="countdown">
+            <span>Expires In:</span>
+            <span class="countdown-time" id="countdownText">—</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- RIGHT PANEL -->
+      <section>
+
+        <!-- Membership -->
+        <div class="section">
+          <div class="section-title">Membership</div>
+          <select id="membershipSelect">
+            <option value="Power12 – 1 Month|SaveNow Plus|2025-12-31">
+              Power12 – 1 Month · SaveNow Plus
+            </option>
+            <option value="SaveNow Lite – 3 Months|SaveNow Lite|2026-03-31">
+              SaveNow Lite – 3 Months
+            </option>
+            <option value="SaveNow Pro – Annual|SaveNow Pro|2026-12-31">
+              SaveNow Pro – Annual
+            </option>
+          </select>
+
+          <button id="applyMembershipBtn">Apply Membership</button>
+        </div>
+
+        <!-- Products -->
+        <div class="section">
+          <div class="section-title">Demo Products</div>
+          <div class="products-grid" id="productsGrid"></div>
+        </div>
+
+        <!-- Coupon Purchase -->
+        <div class="section">
+          <div class="section-title">Quick Coupon Purchase</div>
+          <button class="secondary" id="buyCouponBtn">+ Purchase Coupon</button>
+        </div>
+
+        <!-- Upload Bills -->
+        <div class="section">
+          <div class="section-title">Upload Bills</div>
+          <input type="file" id="billUpload" multiple accept="application/pdf,image/*">
+          <div class="files-list" id="filesList"></div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- DASHBOARD -->
+    <section class="dashboard">
+      <div class="dashboard-title">Dashboard Overview</div>
+
+      <div class="dashboard-grid">
+
+        <div class="dash-card">
+          <div class="dash-label">Total Savings</div>
+          <div class="dash-value" id="dashTotalSavings">₹0</div>
+        </div>
+
+        <div class="dash-card">
+          <div class="dash-label">Coupons Purchased</div>
+          <div class="dash-value" id="dashCoupons">0</div>
+        </div>
+
+        <div class="dash-card">
+          <div class="dash-label">Membership</div>
+          <div class="dash-value" id="dashMembershipName">—</div>
+        </div>
+
+        <div class="dash-card">
+          <div class="dash-label">Membership Validity</div>
+          <div class="dash-value" id="dashValidity">—</div>
+        </div>
+
+      </div>
+    </section>
+
+  </div>
+
+  <script src="internship.js"></script>
+</body>
+</html>
